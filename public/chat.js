@@ -29,6 +29,7 @@ socket.on('chat',data => {
     if (data.message!="" && data.sender!=""){
     feedback.innerHTML='<p>ONLINE</p>';
     output.innerHTML +='<p><strong>'+data.sender+': </strong>'+data.message+'</p>'
+    output.scrollIntoView(false);
     message.value='';
     }
 })
@@ -40,3 +41,5 @@ message.addEventListener('keypress',()=>{
 socket.on('typing',data=>{
     feedback.innerHTML='<p> -> ' + data + ' yazıyor...</p>'
 })
+
+$(output).scrollTop($(output)[0].scrollHeight);
