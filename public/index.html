@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="chat-wrap">
+        <h2><img id="logo" src="images/logo.png" alt=""> ST - CHAT</h2>
+        <div id="cerceve-feedback"><div id="top"></div><div id="feedback"><p>ONLINE</p></div></div>
+        <div id="chat-window">
+            <div id="output"></div>
+            
+        </div>
+        <input type="text" id="sender" placeholder="Ad:">
+        <input type="text" id="message" placeholder="Mesaj:">
+        <button id="submitBtn">Gönder</button>
+    </div>
+    <div id="footer">Selim Talha Çağlar - Copyright @ 2021</div>
+    <div id="server-time"></div>
+    <script src="/chat.js" charset="utf-8"></script>
+</body>
+</html>
