@@ -1,5 +1,4 @@
 const socket = io.connect("/");
-alert("Bağlantı Kuruldu !")
 
 const sender=document.getElementById("sender");
 const message=document.getElementById("message");
@@ -27,6 +26,7 @@ document.onkeyup = function(e){
 
 socket.on('chat',data => {
     if (data.message!="" && data.sender!=""){
+    sender.disabled=true;
     feedback.innerHTML='<p>ONLINE</p>';
     output.innerHTML +='<p><strong>'+data.sender+': </strong>'+data.message+'</p>'
     output.scrollIntoView(false);
@@ -41,5 +41,3 @@ message.addEventListener('keypress',()=>{
 socket.on('typing',data=>{
     feedback.innerHTML='<p> -> ' + data + ' yazıyor...</p>'
 })
-
-$(output).scrollTop($(output)[0].scrollHeight);
